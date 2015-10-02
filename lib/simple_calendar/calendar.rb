@@ -4,9 +4,13 @@ module SimpleCalendar
   class Calendar
     attr_accessor :view_context, :options
 
+    # issue #96 Pass in your own initialize as view_context (required argument( , {:initializer => your own initilizer Proc} )
     def initialize(view_context, opts={})
       @view_context = view_context
       @options = opts
+      if opts[:initalizer]
+        your actions here
+      end
     end
 
     def render(&block)
